@@ -58,8 +58,8 @@ export const VillaCard: React.FC<VillaCardProps> = ({
               src={villa.primaryAsset.path}
               alt={villa.primaryAsset.altText}
               fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 45vw"
-              quality={90}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, (max-width: 1440px) 45vw, 600px"
+              quality={85}
               priority={isPriority}
               className={styles.image}
             />

@@ -30,6 +30,8 @@ export const LocationHero: React.FC<LocationHeroProps> = ({ intro }) => {
               alt={intro.heroAsset.altText}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px"
+              loading="lazy"
+              quality={85}
               className={styles.heroImage}
             />
           </div>

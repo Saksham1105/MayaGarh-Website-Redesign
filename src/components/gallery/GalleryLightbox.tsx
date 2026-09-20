@@ -183,12 +183,26 @@ export const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
               src={activeImage.asset.path}
               alt={activeImage.alt}
               fill
-              sizes="(max-width: 768px) 100vw, 90vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1440px) 90vw, 1280px"
               priority
+              quality={85}
               className={styles.lightboxImage}
               id="gallery-lightbox-active-img"
             />
           </div>
+
+          {/* Preload only immediately adjacent next plate for smooth next navigation */}
+          {images.length > 1 && (
+            <div style={{ display: 'none' }} aria-hidden="true">
+              <Image
+                src={images[(currentIndex + 1) % images.length].asset.path}
+                alt=""
+                width={10}
+                height={10}
+                loading="lazy"
+              />
+            </div>
+          )}
 
           <button
             type="button"

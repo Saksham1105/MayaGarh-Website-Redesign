@@ -156,7 +156,7 @@ export const VillasSection: React.FC = () => {
               villa={villa}
               index={idx}
               total={VILLAS_DATA.length}
-              isPriority={idx === 0}
+              isPriority={false}
             />
           ))}
         </div>

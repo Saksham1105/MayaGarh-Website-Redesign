@@ -21,8 +21,9 @@ export const HeroMedia: React.FC<HeroMediaProps> = ({ imageRef }) => {
           alt={imageAsset.altText}
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
-          quality={90}
+          quality={85}
           className={styles.heroImageDesktop}
         />
       </div>

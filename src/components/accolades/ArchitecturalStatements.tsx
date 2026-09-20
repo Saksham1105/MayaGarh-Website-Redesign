@@ -31,6 +31,7 @@ export const ArchitecturalStatements: React.FC<ArchitecturalStatementsProps> = (
               height={ACCOLADES_DATA.visualAsset.height}
               className={styles.architecturalImage}
               loading="lazy"
+              quality={85}
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
             />
           </div>

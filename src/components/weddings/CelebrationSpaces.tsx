@@ -40,7 +40,8 @@ export const CelebrationSpaces: React.FC<CelebrationSpacesProps> = ({ spaces }) 
                     alt={space1.asset.altText}
                     fill
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 55vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1440px) 55vw, 780px"
+                    quality={85}
                     className={styles.spaceImage}
                   />
                 </div>
@@ -69,7 +70,8 @@ export const CelebrationSpaces: React.FC<CelebrationSpacesProps> = ({ spaces }) 
                       alt={space2.asset.altText}
                       fill
                       loading="lazy"
-                      sizes="(max-width: 768px) 100vw, 45vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 45vw, 620px"
+                      quality={85}
                       className={styles.spaceImage}
                     />
                   </div>
@@ -98,7 +100,8 @@ export const CelebrationSpaces: React.FC<CelebrationSpacesProps> = ({ spaces }) 
                       alt={space3.asset.altText}
                       fill
                       loading="lazy"
-                      sizes="(max-width: 768px) 100vw, 45vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 45vw, 620px"
+                      quality={85}
                       className={styles.spaceImage}
                     />
                   </div>
@@ -136,7 +139,8 @@ export const CelebrationSpaces: React.FC<CelebrationSpacesProps> = ({ spaces }) 
                     alt={space4.asset.altText}
                     fill
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 55vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1440px) 55vw, 780px"
+                    quality={85}
                     className={styles.spaceImage}
                   />
                 </div>
@@ -155,6 +159,7 @@ export const CelebrationSpaces: React.FC<CelebrationSpacesProps> = ({ spaces }) 
                     fill
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px"
+                    quality={85}
                     className={styles.spaceImage}
                   />
                 </div>

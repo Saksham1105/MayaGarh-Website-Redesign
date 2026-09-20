@@ -35,8 +35,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
   const renderPlate = (
     image: GalleryImageItem,
     aspectClass: string,
-    sizes: string,
-    isPriority: boolean = false
+    sizes: string
   ) => {
     const globalIndex = allImages.findIndex((img) => img.id === image.id);
     return (
@@ -53,8 +52,8 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
               alt={image.alt}
               fill
               sizes={sizes}
-              priority={isPriority}
-              loading={isPriority ? 'eager' : 'lazy'}
+              loading="lazy"
+              quality={85}
               className={styles.plateImage}
             />
           </div>
@@ -84,8 +83,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
               {renderPlate(
                 imgs[0],
                 styles.ratio2x1,
-                '(max-width: 768px) 100vw, 100vw',
-                isFirstChapter
+                '(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px'
               )}
             </div>
             {imgs.length > 1 && (
@@ -93,20 +91,20 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
                 {renderPlate(
                   imgs[1],
                   styles.ratio4x3,
-                  '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 60vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1440px) 58vw, 820px'
                 )}
                 {imgs.length > 2 && (
                   <div className={styles.trioStack}>
                     {renderPlate(
                       imgs[2],
                       styles.ratio3x2,
-                      '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 40vw'
+                      '(max-width: 768px) 100vw, (max-width: 1024px) 45vw, (max-width: 1440px) 32vw, 450px'
                     )}
                     {imgs[3] &&
                       renderPlate(
                         imgs[3],
                         styles.ratio3x2,
-                        '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 40vw'
+                        '(max-width: 768px) 100vw, (max-width: 1024px) 45vw, (max-width: 1440px) 32vw, 450px'
                       )}
                   </div>
                 )}
@@ -121,33 +119,33 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
         return (
           <>
             <div className={styles.gridPair}>
-              {renderPlate(imgs[0], styles.ratio3x2, '(max-width: 768px) 100vw, 50vw')}
-              {renderPlate(imgs[1], styles.ratio3x2, '(max-width: 768px) 100vw, 50vw')}
+              {renderPlate(imgs[0], styles.ratio3x2, '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 46vw, 650px')}
+              {renderPlate(imgs[1], styles.ratio3x2, '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 46vw, 650px')}
             </div>
             <div style={{ height: 'clamp(1.25rem, 2.5vw, 2.5rem)' }} />
             <div className={styles.gridTrio}>
               {renderPlate(
                 imgs[2],
                 styles.ratio4x3,
-                '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 60vw'
+                '(max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1440px) 58vw, 820px'
               )}
               <div className={styles.trioStack}>
                 {renderPlate(
                   imgs[3],
                   styles.ratio3x2,
-                  '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 40vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 45vw, (max-width: 1440px) 32vw, 450px'
                 )}
                 {renderPlate(
                   imgs[4],
                   styles.ratio3x2,
-                  '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 40vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 45vw, (max-width: 1440px) 32vw, 450px'
                 )}
               </div>
             </div>
             <div style={{ height: 'clamp(1.25rem, 2.5vw, 2.5rem)' }} />
             <div className={styles.gridPair}>
-              {renderPlate(imgs[5], styles.ratio3x2, '(max-width: 768px) 100vw, 50vw')}
-              {renderPlate(imgs[6], styles.ratio3x2, '(max-width: 768px) 100vw, 50vw')}
+              {renderPlate(imgs[5], styles.ratio3x2, '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 46vw, 650px')}
+              {renderPlate(imgs[6], styles.ratio3x2, '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 46vw, 650px')}
             </div>
             {imgs[7] && (
               <>
@@ -156,7 +154,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
                   {renderPlate(
                     imgs[7],
                     styles.ratio2x1,
-                    '(max-width: 768px) 100vw, 100vw'
+                    '(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px'
                   )}
                 </div>
               </>
@@ -172,7 +170,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
               {renderPlate(
                 imgs[0],
                 styles.ratio2x1,
-                '(max-width: 768px) 100vw, 100vw'
+                '(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px'
               )}
             </div>
             <div className={styles.gridTrioEqual}>
@@ -180,7 +178,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
                 renderPlate(
                   img,
                   styles.ratio3x2,
-                  '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 30vw, 420px'
                 )
               )}
             </div>
@@ -194,20 +192,20 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
             {renderPlate(
               imgs[0],
               styles.ratio4x3,
-              '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 60vw'
+              '(max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1440px) 58vw, 820px'
             )}
             <div className={styles.trioStack}>
               {imgs[1] &&
                 renderPlate(
                   imgs[1],
                   styles.ratio3x2,
-                  '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 40vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 45vw, (max-width: 1440px) 32vw, 450px'
                 )}
               {imgs[2] &&
                 renderPlate(
                   imgs[2],
                   styles.ratio3x2,
-                  '(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 40vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 45vw, (max-width: 1440px) 32vw, 450px'
                 )}
             </div>
           </div>
@@ -221,7 +219,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
               {renderPlate(
                 imgs[0],
                 styles.ratio2x1,
-                '(max-width: 768px) 100vw, 100vw'
+                '(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px'
               )}
             </div>
             <div className={styles.gridPair}>
@@ -229,7 +227,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
                 renderPlate(
                   img,
                   styles.ratio3x2,
-                  '(max-width: 768px) 100vw, 50vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 46vw, 650px'
                 )
               )}
             </div>
@@ -244,7 +242,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
               {renderPlate(
                 imgs[0],
                 styles.ratio2x1,
-                '(max-width: 768px) 100vw, 100vw'
+                '(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px'
               )}
             </div>
             <div className={styles.gridPair}>
@@ -252,7 +250,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
                 renderPlate(
                   img,
                   styles.ratio3x2,
-                  '(max-width: 768px) 100vw, 50vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 46vw, 650px'
                 )
               )}
             </div>
@@ -267,7 +265,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
               {renderPlate(
                 imgs[0],
                 styles.ratio2x1,
-                '(max-width: 768px) 100vw, 100vw'
+                '(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px'
               )}
             </div>
             <div className={styles.gridPair}>
@@ -275,7 +273,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
                 renderPlate(
                   img,
                   styles.ratio3x2,
-                  '(max-width: 768px) 100vw, 50vw'
+                  '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 46vw, 650px'
                 )
               )}
             </div>
@@ -290,7 +288,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
               renderPlate(
                 img,
                 styles.ratio1x1,
-                '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
+                '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 23vw, 320px'
               )
             )}
           </div>
@@ -300,7 +298,7 @@ export const GalleryChapter: React.FC<GalleryChapterProps> = ({
         return (
           <div className={styles.gridPair}>
             {imgs.map((img) =>
-              renderPlate(img, styles.ratio3x2, '(max-width: 768px) 100vw, 50vw')
+              renderPlate(img, styles.ratio3x2, '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 46vw, 650px')
             )}
           </div>
         );

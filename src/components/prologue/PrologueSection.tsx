@@ -143,8 +143,8 @@ export const PrologueSection: React.FC = () => {
                   src={ASSET_MAP.PROLOGUE_PRIMARY.path}
                   alt={ASSET_MAP.PROLOGUE_PRIMARY.altText}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 42vw"
-                  quality={90}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 42vw, 560px"
+                  quality={85}
                   className={styles.primaryImage}
                 />
               </div>
@@ -159,8 +159,8 @@ export const PrologueSection: React.FC = () => {
                   src={ASSET_MAP.PROLOGUE_DETAIL.path}
                   alt={ASSET_MAP.PROLOGUE_DETAIL.altText}
                   fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  quality={90}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 35vw, (max-width: 1440px) 25vw, 340px"
+                  quality={85}
                   className={styles.detailImage}
                 />
               </div>

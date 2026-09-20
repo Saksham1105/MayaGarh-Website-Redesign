@@ -39,7 +39,8 @@ export const LandscapeDialogue: React.FC<LandscapeDialogueProps> = ({
                     alt={feature1.asset.altText}
                     fill
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 55vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1440px) 55vw, 780px"
+                    quality={85}
                     className={styles.landscapeImage}
                   />
                 </div>
@@ -77,7 +78,8 @@ export const LandscapeDialogue: React.FC<LandscapeDialogueProps> = ({
                     alt={feature2.asset.altText}
                     fill
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 55vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1440px) 55vw, 780px"
+                    quality={85}
                     className={styles.landscapeImage}
                   />
                 </div>

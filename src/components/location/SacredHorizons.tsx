@@ -68,7 +68,8 @@ export const SacredHorizons: React.FC<SacredHorizonsProps> = ({
                     alt={dest.asset.altText}
                     fill
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 33vw, 460px"
+                    quality={85}
                     className={styles.horizonImage}
                   />
                 </figure>

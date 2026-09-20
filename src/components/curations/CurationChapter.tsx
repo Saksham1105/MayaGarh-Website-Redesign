@@ -29,13 +29,13 @@ export const CurationChapter: React.FC<CurationChapterProps> = ({
   const getImageSizes = () => {
     switch (layoutVariant) {
       case 'poolPanoramic':
-        return '(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 65vw';
+        return '(max-width: 768px) 100vw, (max-width: 1200px) 75vw, (max-width: 1440px) 65vw, 920px';
       case 'sundownerRight':
       case 'courtyardStaggered':
-        return '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw';
+        return '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, (max-width: 1440px) 45vw, 620px';
       case 'diningLeft':
       default:
-        return '(max-width: 768px) 100vw, (max-width: 1200px) 55vw, 50vw';
+        return '(max-width: 768px) 100vw, (max-width: 1200px) 55vw, (max-width: 1440px) 50vw, 700px';
     }
   };
 
@@ -99,6 +99,8 @@ export const CurationChapter: React.FC<CurationChapterProps> = ({
               fill
               sizes={getImageSizes()}
               priority={isPriority}
+              quality={85}
+              loading="lazy"
               className={styles.curationImage}
             />
           </div>
