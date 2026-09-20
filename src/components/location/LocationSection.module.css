@@ -13,6 +13,7 @@
   color: #FDFBF7;
   overflow: hidden;
   z-index: 5;
+  scroll-margin-top: clamp(4rem, 6vw, 6rem);
 }
 
 /* ── Decorative Section Ambient Glow ── */

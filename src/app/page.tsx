@@ -8,6 +8,7 @@ import { LocationSection } from '@/components/location/LocationSection';
 import { GallerySection } from '@/components/gallery/GallerySection';
 import { AccoladesSection } from '@/components/accolades/AccoladesSection';
 import { ReservationSection } from '@/components/reservation/ReservationSection';
+import { Footer } from '@/components/footer';
 
 /**
  * Maya Garh Pushkar — Main Landing Experience
@@ -20,19 +21,23 @@ import { ReservationSection } from '@/components/reservation/ReservationSection'
  * Phase 8B: Visual Archive / Hybrid Editorial Monograph Showcase
  * Phase 9B: Sanctuary Trust & Guest Chronicles Editorial Chapter
  * Phase 10B: Luxury Concierge Reservation & Enquiry Experience
+ * Phase 11B: Sanctuary Colophon & Architectural Footer
  */
 export default function HomePage() {
   return (
-    <main id="main-content">
-      <HeroSection />
-      <PrologueSection />
-      <VillasSection />
-      <CurationsSection />
-      <WeddingsSection />
-      <LocationSection />
-      <GallerySection />
-      <AccoladesSection />
-      <ReservationSection />
-    </main>
+    <>
+      <main id="main-content">
+        <HeroSection />
+        <PrologueSection />
+        <VillasSection />
+        <CurationsSection />
+        <WeddingsSection />
+        <LocationSection />
+        <GallerySection />
+        <AccoladesSection />
+        <ReservationSection />
+      </main>
+      <Footer />
+    </>
   );
 }

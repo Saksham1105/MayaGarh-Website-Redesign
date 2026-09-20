@@ -34,9 +34,7 @@ export const HeroContent: React.FC<HeroContentProps> = ({
 
       <div ref={ctaRef} className={styles.ctaGroup}>
         <a
-          href="https://wa.me/919829071817"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#reservation?intent=stay"
           className={styles.primaryCta}
         >
           Enquire for Rates

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from './Header.module.css';
 
 export const Header: React.FC = () => {
@@ -20,13 +20,39 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle Escape key to close mobile drawer
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileOpen) {
+        setIsMobileOpen(false);
+      }
+    };
+
+    if (isMobileOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileOpen]);
+
+  // Lock body scroll when mobile drawer is active
+  useEffect(() => {
+    if (isMobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileOpen]);
+
   const toggleMobileMenu = () => {
     setIsMobileOpen((prev) => !prev);
   };
 
-  const closeMobileMenu = () => {
+  const closeMobileMenu = useCallback(() => {
     setIsMobileOpen(false);
-  };
+  }, []);
 
   return (
     <>
@@ -65,8 +91,18 @@ export const Header: React.FC = () => {
               </a>
             </li>
             <li>
-              <a href="#experiences" className={styles.navLink}>
+              <a href="#curations" className={styles.navLink}>
                 Curations
+              </a>
+            </li>
+            <li>
+              <a href="#weddings" className={styles.navLink}>
+                Weddings
+              </a>
+            </li>
+            <li>
+              <a href="#location" className={styles.navLink}>
+                Location
               </a>
             </li>
             <li>
@@ -75,15 +111,15 @@ export const Header: React.FC = () => {
               </a>
             </li>
             <li>
-              <a href="#location" className={styles.navLink}>
-                Location
+              <a href="#accolades" className={styles.navLink}>
+                Accolades
               </a>
             </li>
           </ul>
         </nav>
 
         <div className={styles.headerActions}>
-          <a href="https://wa.me/919829071817" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
+          <a href="#reservation" className={styles.ctaButton}>
             Enquire for Rates
           </a>
 
@@ -118,8 +154,18 @@ export const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#experiences" className={styles.mobileNavLink} onClick={closeMobileMenu}>
+            <a href="#curations" className={styles.mobileNavLink} onClick={closeMobileMenu}>
               Curations
+            </a>
+          </li>
+          <li>
+            <a href="#weddings" className={styles.mobileNavLink} onClick={closeMobileMenu}>
+              Weddings
+            </a>
+          </li>
+          <li>
+            <a href="#location" className={styles.mobileNavLink} onClick={closeMobileMenu}>
+              Location
             </a>
           </li>
           <li>
@@ -128,15 +174,13 @@ export const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#location" className={styles.mobileNavLink} onClick={closeMobileMenu}>
-              Location
+            <a href="#accolades" className={styles.mobileNavLink} onClick={closeMobileMenu}>
+              Accolades
             </a>
           </li>
-          <li style={{ marginTop: '1.5rem' }}>
+          <li className={styles.mobileCtaItem}>
             <a
-              href="https://wa.me/919829071817"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#reservation"
               className={styles.ctaButton}
               onClick={closeMobileMenu}
             >

@@ -61,20 +61,20 @@
 .desktopNav {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .navList {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.35rem;
   list-style: none;
 }
 
 .navLink {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(253, 251, 247, 0.8);
   transition: color 200ms ease;
@@ -190,6 +190,10 @@
 
 .mobileNavLink:hover {
   color: var(--accent-gold);
+}
+
+.mobileCtaItem {
+  margin-top: 1.5rem;
 }
 
 /* Responsive Rules */

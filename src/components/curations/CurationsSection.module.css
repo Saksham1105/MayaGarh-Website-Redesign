@@ -12,6 +12,7 @@
   color: #1A1817;
   overflow: hidden;
   z-index: 3;
+  scroll-margin-top: clamp(4rem, 6vw, 6rem);
 }
 
 /* ── 1. Transitional Threshold (Villas Charcoal → Curations Linen) ── */

@@ -5,7 +5,8 @@
   color: var(--text-light);
   padding: 8rem 0 9rem;
   overflow: hidden;
-  z-index: 2;
+  z-index: var(--z-base);
+  scroll-margin-top: clamp(4rem, 6vw, 6rem);
 }
 
 .prologueGrid {

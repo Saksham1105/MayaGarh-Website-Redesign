@@ -40,7 +40,7 @@ export const VillaCard: React.FC<VillaCardProps> = ({
           </div>
 
           <a
-            href={`#booking?villa=${villa.id}`}
+            href={`#reservation?intent=stay&villa=${villa.id}`}
             className={styles.ctaLink}
             aria-label={`${villa.ctaLabel} — Opens reservation concierge`}
           >

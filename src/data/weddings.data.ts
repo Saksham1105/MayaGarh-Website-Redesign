@@ -179,7 +179,7 @@ export const WEDDINGS_DATA: WeddingSectionData = {
   },
   cta: {
     label: 'Enquire for Weddings',
-    target: '#reservation',
+    target: '#reservation?intent=wedding',
     supportingText:
       'All wedding and celebration inquiries are handled through personal consultation with the Maya Luxury concierge to craft an itinerary tailored to your vision.',
     conciergeEmail: 'hello@mayaluxury.in',

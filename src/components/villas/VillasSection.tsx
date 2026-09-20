@@ -8,7 +8,9 @@ import { VILLAS_DATA } from '@/data/villas.data';
 import { VillaCard } from './VillaCard';
 import styles from './VillasSection.module.css';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export const VillasSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);

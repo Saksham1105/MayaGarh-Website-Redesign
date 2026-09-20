@@ -9,7 +9,9 @@ import { PROLOGUE_DATA } from '@/data/prologue.data';
 import { ASSET_MAP } from '@/data/assets.data';
 import styles from './PrologueSection.module.css';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export const PrologueSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
