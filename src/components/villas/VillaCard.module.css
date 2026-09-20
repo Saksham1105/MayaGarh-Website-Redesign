@@ -30,9 +30,9 @@
 
 .chapterBadge {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
+  font-size: var(--font-size-eyebrow, 0.75rem);
+  font-weight: var(--font-weight-eyebrow, 500);
+  letter-spacing: var(--letter-spacing-eyebrow, 0.25em);
   text-transform: uppercase;
   color: var(--accent-gold);
   margin-bottom: 1rem;

@@ -13,6 +13,7 @@
   color: #FDFBF7;
   overflow: hidden;
   z-index: 4;
+  border-top: 1px solid rgba(230, 197, 135, 0.16);
   scroll-margin-top: clamp(4rem, 6vw, 6rem);
 }
 
@@ -43,9 +44,7 @@
 /* ── 1. CHAPTER 01 — THE INVITATION (Hero / Overview) ── */
 .invitationChapter {
   position: relative;
-  padding-top: clamp(5rem, 8vw, 7.5rem);
-  padding-bottom: clamp(4rem, 6vw, 6rem);
-  border-bottom: 1px solid rgba(194, 142, 100, 0.18);
+  padding: clamp(5rem, 8vw, 8rem) 0 clamp(4rem, 6vw, 6rem);
 }
 
 .invitationHeader {
@@ -57,9 +56,9 @@
 .eyebrow {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
+  font-size: var(--font-size-eyebrow, 0.75rem);
+  font-weight: var(--font-weight-eyebrow, 500);
+  letter-spacing: var(--letter-spacing-eyebrow, 0.25em);
   text-transform: uppercase;
   color: var(--accent-gold);
   margin-bottom: 1.25rem;
@@ -67,9 +66,9 @@
 
 .sectionHeadline {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 5.5vw, 4.75rem);
+  font-size: var(--font-size-section-heading, clamp(2.4rem, 4.2vw, 4rem));
   font-weight: 300;
-  line-height: 1.08;
+  line-height: var(--line-height-section-heading, 1.12);
   letter-spacing: -0.015em;
   color: #FDFBF7;
   margin: 0 0 1.25rem;

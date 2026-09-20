@@ -102,7 +102,7 @@ export const HeroSection: React.FC = () => {
   );
 
   return (
-    <section ref={sectionRef} className={styles.heroSection} aria-label="Hero Opening Cinematic">
+    <section id="hero" ref={sectionRef} className={styles.heroSection} aria-label="Hero Opening Cinematic">
       <Header />
       <HeroMedia imageRef={mediaRef} />
       <HeroContent

@@ -133,7 +133,7 @@ test.describe('Maya Garh Phase 6B — Destination Weddings & Celebrations Suite'
 
     const ctaLink = weddings.locator('a:has-text("ENQUIRE FOR WEDDINGS")');
     await expect(ctaLink).toBeVisible();
-    await expect(ctaLink).toHaveAttribute('href', '#reservation');
+    await expect(ctaLink).toHaveAttribute('href', '#reservation?intent=wedding');
 
     // Concierge contact details
     const emailLink = weddings.locator('a[href^="mailto:hello@mayaluxury.in"]');

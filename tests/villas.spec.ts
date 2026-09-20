@@ -29,7 +29,7 @@ test.describe('Maya Garh Phase 4 — Royal Villa Collection QA Suite', () => {
     await expect(rateTags).toHaveCount(6);
 
     // Verify verified CTA links (exactly 6)
-    const ctas = villasSection.locator('a[href^="#booking?villa="]');
+    const ctas = villasSection.locator('a[href^="#reservation?intent=stay&villa="]');
     await expect(ctas).toHaveCount(6);
 
     // Verify all 6 images have descriptive alt text
@@ -190,12 +190,12 @@ test.describe('Maya Garh Phase 4 — Royal Villa Collection QA Suite', () => {
     await villasSection.scrollIntoViewIfNeeded();
 
     // Focus the first villa CTA directly
-    const firstCta = villasSection.locator('a[href^="#booking?villa="]').first();
+    const firstCta = villasSection.locator('a[href^="#reservation?intent=stay&villa="]').first();
     await firstCta.focus();
     await expect(firstCta).toBeFocused();
 
     // Tab through subsequent villa CTAs
-    const allCtas = villasSection.locator('a[href^="#booking?villa="]');
+    const allCtas = villasSection.locator('a[href^="#reservation?intent=stay&villa="]');
     const count = await allCtas.count();
     expect(count).toBe(6);
 

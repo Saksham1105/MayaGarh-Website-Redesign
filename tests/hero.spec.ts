@@ -10,13 +10,13 @@ test.describe('Maya Garh Phase 2 Hero Experience Suite', () => {
     await expect(h1).toHaveText('MAYA GARH');
 
     // Validate subtitle badge
-    const subtitle = page.locator('p', { hasText: 'PUSHKAR, RAJASTHAN' });
+    const subtitle = page.locator('#hero p', { hasText: 'PUSHKAR, RAJASTHAN' });
     await expect(subtitle).toBeVisible();
 
     // Validate CTA buttons
-    const primaryCta = page.locator('a', { hasText: 'Enquire for Rates' }).first();
+    const primaryCta = page.locator('div[class*="ctaGroup"] a', { hasText: 'Enquire for Rates' }).first();
     await expect(primaryCta).toBeVisible();
-    await expect(primaryCta).toHaveAttribute('href', 'https://wa.me/919829071817');
+    await expect(primaryCta).toHaveAttribute('href', '#reservation?intent=stay');
 
     // Validate Desktop Navigation
     const nav = page.locator('nav[aria-label="Primary Sanctuary Navigation"]');

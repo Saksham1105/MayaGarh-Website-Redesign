@@ -15,7 +15,7 @@
   --accent-terracotta: #C28E64;
   --text-dark: #1A1817;
   --text-light: #FDFBF7;
-  --text-muted: #8C857B;
+  --text-muted: #9E978C;
   --text-gold: #E6C587;
   --border-dark: rgba(230, 197, 135, 0.2);
   --border-light: rgba(26, 24, 23, 0.1);
@@ -23,6 +23,17 @@
   /* Typography Fallbacks (Loaded dynamically in layout via next/font) */
   --font-serif-fallback: 'Cormorant Garamond', Georgia, serif;
   --font-sans-fallback: 'Outfit', 'Inter', system-ui, sans-serif;
+
+  /* Normalized Eyebrow & Heading Tokens */
+  --font-size-eyebrow: 0.75rem;
+  --letter-spacing-eyebrow: 0.25em;
+  --font-weight-eyebrow: 500;
+  --font-size-section-heading: clamp(2.4rem, 4.2vw, 4rem);
+  --line-height-section-heading: 1.12;
+
+  /* Normalized Section Vertical Spacing */
+  --section-padding-top: clamp(5rem, 8vw, 8rem);
+  --section-padding-bottom: clamp(6rem, 9vw, 9rem);
 
   /* Layout Container Dimensions */
   --max-width: 1440px;

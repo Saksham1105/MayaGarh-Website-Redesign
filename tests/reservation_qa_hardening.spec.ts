@@ -59,16 +59,16 @@ test.describe('Maya Garh Phase 10C — Reservation QA & Conversion Hardening Sui
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/', { waitUntil: 'networkidle' });
 
-    // Header CTA -> Verified WhatsApp route
+    // Header CTA -> #reservation anchor
     const headerCta = page.locator('header a:has-text("Enquire for Rates")');
-    await expect(headerCta).toHaveAttribute('href', 'https://wa.me/919829071817');
+    await expect(headerCta).toHaveAttribute('href', '#reservation');
 
-    // Hero CTA -> Verified WhatsApp route
-    const heroCta = page.locator('section[class*="heroSection"] a:has-text("Enquire for Rates")').first();
-    await expect(heroCta).toHaveAttribute('href', 'https://wa.me/919829071817');
+    // Hero CTA -> #reservation?intent=stay route
+    const heroCta = page.locator('div[class*="ctaGroup"] a:has-text("Enquire for Rates")').first();
+    await expect(heroCta).toHaveAttribute('href', '#reservation?intent=stay');
 
-    // Weddings CTA -> #reservation
-    const weddingsCta = page.locator('section#weddings a[href="#reservation"]');
+    // Weddings CTA -> #reservation?intent=wedding
+    const weddingsCta = page.locator('section#weddings a[href^="#reservation"]');
     await expect(weddingsCta).toBeVisible();
 
     // Curations CTA -> #reservation

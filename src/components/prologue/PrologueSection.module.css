@@ -3,7 +3,7 @@
   width: 100%;
   background-color: var(--bg-dark);
   color: var(--text-light);
-  padding: 8rem 0 9rem;
+  padding: var(--section-padding-top, 8rem) 0 var(--section-padding-bottom, 9rem);
   overflow: hidden;
   z-index: var(--z-base);
   scroll-margin-top: clamp(4rem, 6vw, 6rem);
@@ -25,9 +25,9 @@
 
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
+  font-size: var(--font-size-eyebrow, 0.75rem);
+  font-weight: var(--font-weight-eyebrow, 500);
+  letter-spacing: var(--letter-spacing-eyebrow, 0.25em);
   text-transform: uppercase;
   color: var(--accent-gold);
   margin-bottom: 1.25rem;
@@ -35,10 +35,10 @@
 
 .heading {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-size: var(--font-size-section-heading, clamp(2.4rem, 4.2vw, 4rem));
   font-weight: 300;
-  letter-spacing: 0.04em;
-  line-height: 1.15;
+  letter-spacing: 0.02em;
+  line-height: var(--line-height-section-heading, 1.12);
   color: var(--text-light);
   margin-bottom: 2rem;
 }

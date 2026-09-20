@@ -24,58 +24,89 @@ export const PrologueSection: React.FC = () => {
       const section = sectionRef.current;
       if (!section) return;
 
-      // Editorial text sequence reveal
-      if (textColRef.current) {
-        gsap.fromTo(
-          textColRef.current.children,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            stagger: 0.12,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: textColRef.current,
-              start: 'top 90%',
-              toggleActions: 'play none none none',
-            },
-          }
-        );
-      }
+      const mm = gsap.matchMedia();
 
-      // Primary image smooth reveal
-      if (primaryImgRef.current) {
-        gsap.fromTo(
-          primaryImgRef.current,
-          { opacity: 0.4, scale: 1.05 },
-          {
-            opacity: 1,
-            scale: 1.0,
-            duration: 1.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: primaryImgRef.current,
-              start: 'top 90%',
-              toggleActions: 'play none none none',
-            },
-          }
-        );
-      }
+      mm.add(
+        {
+          isDesktop: '(min-width: 769px) and (prefers-reduced-motion: no-preference)',
+          isMobile: '(max-width: 768px) and (prefers-reduced-motion: no-preference)',
+          reduceMotion: '(prefers-reduced-motion: reduce)',
+        },
+        (context) => {
+          const { isDesktop, reduceMotion } = context.conditions as {
+            isDesktop: boolean;
+            isMobile: boolean;
+            reduceMotion: boolean;
+          };
 
-      // Secondary detail image parallax translation (desktop/tablet only)
-      if (detailImgRef.current && window.innerWidth > 768) {
-        gsap.to(detailImgRef.current, {
-          yPercent: -15,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 0.8,
-          },
-        });
-      }
+          if (reduceMotion) {
+            if (textColRef.current) {
+              gsap.set(textColRef.current.children, { opacity: 1, y: 0 });
+            }
+            if (primaryImgRef.current) {
+              gsap.set(primaryImgRef.current, { opacity: 1, scale: 1 });
+            }
+            return;
+          }
+
+          // Editorial text sequence reveal
+          if (textColRef.current) {
+            gsap.fromTo(
+              textColRef.current.children,
+              { opacity: 0, y: 24 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.85,
+                stagger: 0.1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: textColRef.current,
+                  start: 'top 88%',
+                  toggleActions: 'play none none none',
+                },
+              }
+            );
+          }
+
+          // Primary image smooth reveal
+          if (primaryImgRef.current) {
+            gsap.fromTo(
+              primaryImgRef.current,
+              { opacity: 0.4, scale: 1.04 },
+              {
+                opacity: 1,
+                scale: 1.0,
+                duration: 1.0,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: primaryImgRef.current,
+                  start: 'top 88%',
+                  toggleActions: 'play none none none',
+                },
+              }
+            );
+          }
+
+          // Secondary detail image parallax translation (desktop/tablet only via matchMedia)
+          if (detailImgRef.current && isDesktop) {
+            gsap.to(detailImgRef.current, {
+              yPercent: -15,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 0.8,
+              },
+            });
+          }
+        }
+      );
+
+      return () => {
+        mm.revert();
+      };
     },
     { scope: sectionRef }
   );
