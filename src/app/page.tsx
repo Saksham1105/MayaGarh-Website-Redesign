@@ -6,6 +6,7 @@ import { CurationsSection } from '@/components/curations/CurationsSection';
 import { WeddingsSection } from '@/components/weddings/WeddingsSection';
 import { LocationSection } from '@/components/location/LocationSection';
 import { GallerySection } from '@/components/gallery/GallerySection';
+import { AccoladesSection } from '@/components/accolades/AccoladesSection';
 
 /**
  * Maya Garh Pushkar — Main Landing Experience
@@ -16,6 +17,7 @@ import { GallerySection } from '@/components/gallery/GallerySection';
  * Phase 6B: Destination Weddings & Celebrations Cinematic Showcase
  * Phase 7B: Location / Pushkar / Aravallis Sense-of-Place Showcase
  * Phase 8B: Visual Archive / Hybrid Editorial Monograph Showcase
+ * Phase 9B: Sanctuary Trust & Guest Chronicles Editorial Chapter
  */
 export default function HomePage() {
   return (
@@ -27,6 +29,7 @@ export default function HomePage() {
       <WeddingsSection />
       <LocationSection />
       <GallerySection />
+      <AccoladesSection />
     </main>
   );
 }
