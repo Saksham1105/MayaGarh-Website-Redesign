@@ -62,4 +62,68 @@ test.describe('Maya Garh Phase 10B — Reservation Responsive Visual QA', () => 
       });
     });
   }
+
+  test('Visual capture of compiled enquiry summary state on Desktop 1440px', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/', { waitUntil: 'networkidle' });
+
+    const reservation = page.locator('section#reservation');
+    await reservation.scrollIntoViewIfNeeded();
+
+    await reservation.locator('#res-full-name').fill('Aarav & Meera');
+    await reservation.locator('#res-email').fill('aarav.meera@example.com');
+    await reservation.locator('#res-phone').fill('+91 98290 71817');
+    await reservation.locator('#res-villa').selectOption({ label: 'Maha Maya' });
+    await reservation
+      .locator('#res-notes')
+      .fill('Looking for a quiet celebration — ideally around sunset.');
+
+    await reservation.locator('button[type="submit"]').click();
+
+    const summary = reservation.locator('div[aria-label="Enquiry Summary"]');
+    await expect(summary).toBeVisible();
+
+    await page.evaluate(() => {
+      const header = document.querySelector('header');
+      if (header) header.style.visibility = 'hidden';
+    });
+
+    await reservation.screenshot({
+      path: 'test-results/reservation-summary-desktop-1440.png',
+    });
+  });
+
+  test('Visual capture of compiled enquiry summary state on Mobile 390px', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/', { waitUntil: 'networkidle' });
+
+    const reservation = page.locator('section#reservation');
+    await reservation.scrollIntoViewIfNeeded();
+
+    await reservation.locator('#res-full-name').fill('Aarav & Meera');
+    await reservation.locator('#res-email').fill('aarav.meera@example.com');
+    await reservation.locator('#res-phone').fill('+91 98290 71817');
+    await reservation.locator('#res-villa').selectOption({ label: 'Maha Maya' });
+    await reservation
+      .locator('#res-notes')
+      .fill('Looking for a quiet celebration — ideally around sunset.');
+
+    await reservation.locator('button[type="submit"]').click();
+
+    const summary = reservation.locator('div[aria-label="Enquiry Summary"]');
+    await expect(summary).toBeVisible();
+
+    await page.evaluate(() => {
+      const header = document.querySelector('header');
+      if (header) header.style.visibility = 'hidden';
+    });
+
+    await reservation.screenshot({
+      path: 'test-results/reservation-summary-mobile-390.png',
+    });
+  });
 });

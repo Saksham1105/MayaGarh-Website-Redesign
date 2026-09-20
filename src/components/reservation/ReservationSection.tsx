@@ -50,7 +50,7 @@ export const ReservationSection: React.FC = () => {
     const intentParam = urlParams.get('intent')?.toLowerCase();
     const villaParam = urlParams.get('villa')?.toLowerCase();
 
-    let resolvedIntent = '';
+    let resolvedIntent = 'villa-stay';
     if (intentParam === 'wedding' || intentParam === 'destination-wedding') {
       resolvedIntent = 'destination-wedding';
     } else if (
@@ -62,7 +62,7 @@ export const ReservationSection: React.FC = () => {
       resolvedIntent = 'villa-stay';
     }
 
-    let resolvedVilla = '';
+    let resolvedVilla = 'no-preference';
     if (villaParam) {
       const match = RESERVATION_DATA.villas.find(
         (v) =>
@@ -71,14 +71,14 @@ export const ReservationSection: React.FC = () => {
       );
       if (match) {
         resolvedVilla = match.id;
-        if (!resolvedIntent) resolvedIntent = 'villa-stay';
+        resolvedIntent = 'villa-stay';
       }
     }
 
     setFormData((prev) => ({
       ...prev,
-      enquiryType: resolvedIntent || prev.enquiryType,
-      villaPreference: resolvedVilla || prev.villaPreference,
+      enquiryType: resolvedIntent,
+      villaPreference: resolvedVilla,
     }));
   }, []);
 
