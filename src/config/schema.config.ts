@@ -22,7 +22,6 @@ export const getHotelSchema = () => ({
   email: SEO_CONFIG.contact.emailGeneral,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Bhagwanpura',
     addressLocality: 'Pushkar',
     addressRegion: 'Rajasthan',
     postalCode: '305001',

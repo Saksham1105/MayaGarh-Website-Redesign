@@ -15,7 +15,7 @@ No visual redesign, animations, new sections, or unverified claims were introduc
 
 Key achievements:
 - **SEO & Crawler Optimization**: Fixed `robots.ts` which previously disallowed `/_next/` static resources (a critical crawler risk that blocks Googlebot CSS/JS rendering); verified exact canonical strategy (`https://mayaluxury.in/maya-garh/`) and sitemap integrity.
-- **Truthful Structured Data (JSON-LD)**: Enhanced `Hotel` schema with officially verified street address (`Bhagwanpura`) and PIN code (`305001`); sanitized all JSON-LD injections against script-tag XSS. Strictly zero fabricated aggregate ratings, awards, prices, or room specs.
+- **Truthful Structured Data (JSON-LD)**: Structured `Hotel` schema using conservative, truthful locality (`Pushkar`), region (`Rajasthan`), and PIN code (`305001`). `Bhagwanpura` is treated strictly as locality/address-area context in editorial copy and is not represented as a fabricated street address or geo object. No unverified coordinates are exposed in schema or reservation messages. Sanitized all JSON-LD injections against script-tag XSS. Strictly zero fabricated aggregate ratings, awards, prices, or room specs.
 - **Hero LCP & Image Optimization**: Eliminated client-side JS hydration state swap in `HeroMedia.tsx`, removing the mobile double-image download. Removed below-the-fold `priority` flags on `WeddingHero.tsx` and `LocationHero.tsx` to prioritize initial LCP network bandwidth.
 - **Font Streamlining**: Streamlined `next/font/google` configuration in `src/lib/fonts.ts` to only load actively utilized font weights (`'300', '400', '500', '600'`), omitting unused weights.
 - **Accessibility & Mobile Drawer Semantics**: Wrapped mobile drawer navigation in a semantic `<nav aria-label="Mobile Sanctuary Navigation">` with proper `visibility: hidden/visible` transitions, ensuring screen readers and keyboard navigation honor modal state.
@@ -53,7 +53,7 @@ Implemented in `src/components/StructuredData.tsx` and configured via `src/confi
    - `name`: `Maya Garh Pushkar`
    - `telephone`: `+91 98290 71817`
    - `email`: `hello@mayaluxury.in`
-   - `address`: `PostalAddress` with `streetAddress: Bhagwanpura`, `addressLocality: Pushkar`, `addressRegion: Rajasthan`, `postalCode: 305001`, `addressCountry: IN`.
+   - `address`: Conservative `PostalAddress` with `addressLocality: Pushkar`, `addressRegion: Rajasthan`, `postalCode: 305001`, `addressCountry: IN`. Strictly omits unverified `streetAddress` and `geo` coordinates objects, ensuring the schema remains truthful rather than artificially complete.
    - `parentOrganization`: `Maya Luxury` (`https://mayaluxury.in`).
    - **Zero Fabrications**: Explicitly omits `aggregateRating`, `review`, fake prices, and unverified star ratings.
 2. **`WebSite` Schema**: Validated with canonical publisher reference.
@@ -133,7 +133,7 @@ Implemented in `src/components/StructuredData.tsx` and configured via `src/confi
 - **Concierge Enquiry Model Preserved**: Verified that the reservation section functions strictly as a luxury personal concierge enquiry system. Zero false booking engines, zero fake availability calendars, and zero fabricated prices.
 - **Client-Side Validation**: Required fields (Full Name, Email, Phone) enforce accessible error alerts with `aria-invalid` and clear upon user correction.
 - **Contextual Intent Routing**: Query string routing (`#reservation?intent=wedding` and `#reservation?intent=stay&villa=<slug>`) correctly pre-selects the appropriate enquiry type and villa preference.
-- **Dispatch Channels**: Generates formatted, human-readable WhatsApp and mailto messages containing verified property coordinates and guest preferences.
+- **Dispatch Channels**: Generates formatted, human-readable WhatsApp and mailto messages containing guest stay preferences, dates, villa selection, and contact details. Strictly zero coordinates or unverified geolocation data are exposed in reservation payloads or user messages.
 
 ---
 
@@ -205,7 +205,7 @@ Every internal anchor links to a valid semantic DOM target with matching `id`:
 | **Page Load Complete** | 792ms | **476ms** |
 | **First Load JS (All Pages)** | 189 kB | **189 kB** |
 | **Robots.txt Crawler Access** | Blocked `/_next/` | **Allows all static assets** |
-| **Hotel Structured Data Address** | Basic region only | **Full verified address + PIN** |
+| **Hotel Structured Data Address** | Basic region only | **Truthful locality, region + PIN** |
 | **JSON-LD Script Safety** | Unsanitized | **XSS sanitized (`\u003c`)** |
 | **Hero Media Hydration** | Dynamic JS swap on mount | **Direct SSR paint** |
 | **Below-Fold Priority Images** | 2 unnecessary preloads | **0 unnecessary preloads** |

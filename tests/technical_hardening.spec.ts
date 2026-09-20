@@ -149,6 +149,10 @@ test.describe('Maya Garh Phase 11D — Technical Hardening, SEO & Accessibility 
     expect(hotelSchema.address.addressRegion).toBe('Rajasthan');
     expect(hotelSchema.address.postalCode).toBe('305001');
 
+    // Conservative address schema: strictly omits fabricated street address & geo coordinates
+    expect(hotelSchema.address.streetAddress).toBeUndefined();
+    expect(hotelSchema.geo).toBeUndefined();
+
     // Strictly NO fabricated ratings or reviews in JSON-LD
     expect(hotelSchema.aggregateRating).toBeUndefined();
     expect(hotelSchema.review).toBeUndefined();
