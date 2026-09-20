@@ -1,0 +1,775 @@
+/* ==========================================================================
+   MAYA GARH — DESTINATION WEDDINGS & ROYAL CELEBRATIONS
+   Phase 6B: Cinematic Editorial Destination Weddings Section
+   Palette: Twilight Fortress Stone (#151311 / #1A1715), Warm Sandstone (#FAF7F2 / #F5EFEB),
+            Royal Aged Gold (#C28E64 / #D4AF37), Heritage Border Accent (rgba(194, 142, 100, 0.22))
+   Typography: Cormorant Garamond (Serif) + Outfit / Inter (Sans)
+   ========================================================================== */
+
+.weddingsSection {
+  position: relative;
+  width: 100%;
+  background-color: #151311;
+  color: #FDFBF7;
+  overflow: hidden;
+  z-index: 4;
+}
+
+/* ── Decorative Section Ambient Glow ── */
+.ambientBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 10%, rgba(194, 142, 100, 0.07), transparent 70%),
+    radial-gradient(ellipse 50% 30% at 85% 65%, rgba(194, 142, 100, 0.05), transparent 70%);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--content-padding-desktop);
+  box-sizing: border-box;
+}
+
+/* ── 1. CHAPTER 01 — THE INVITATION (Hero / Overview) ── */
+.invitationChapter {
+  position: relative;
+  padding-top: clamp(5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(4rem, 6vw, 6rem);
+  border-bottom: 1px solid rgba(194, 142, 100, 0.18);
+}
+
+.invitationHeader {
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+}
+
+.sectionHeadline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.5vw, 4.75rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: #FDFBF7;
+  margin: 0 0 1.25rem;
+}
+
+.sectionTagline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #D4AF37;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.75rem;
+}
+
+.invitationIntro {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: #D6CEC5;
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+.heroMediaFigure {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(194, 142, 100, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.heroImageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #1E1B18;
+}
+
+.heroImage {
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.heroMediaFigure:hover .heroImage {
+  transform: scale(1.03);
+}
+
+.heroFigcaption {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(180deg, #1C1917 0%, #151311 100%);
+  border-top: 1px solid rgba(194, 142, 100, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #A89F91;
+}
+
+.heroFigcaptionAccent {
+  color: var(--accent-gold);
+  font-weight: 500;
+}
+
+/* ── 2. CHAPTER 02 — THE ESTATE AS A CANVAS (Celebration Spaces) ── */
+.spacesChapter {
+  position: relative;
+  padding-top: clamp(5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(5rem, 8vw, 7.5rem);
+  border-bottom: 1px solid rgba(194, 142, 100, 0.18);
+}
+
+.spacesHeader {
+  max-width: 780px;
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.chapterTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #FDFBF7;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.spacesSubtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #C0B7AB;
+  margin: 0;
+}
+
+/* ── Asymmetric Layout Sequence ── */
+.spacesSequence {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4.5rem, 7vw, 7rem);
+}
+
+/* Space 01 — Central Courtyard (Large Asymmetric Wide) */
+.spaceRowAsymmetric {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.spaceMediaFigure {
+  position: relative;
+  margin: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(194, 142, 100, 0.2);
+  background-color: #1A1715;
+}
+
+.spaceImageFrameStandard {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.spaceImageFramePortrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.spaceImageFramePanoramic {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+}
+
+.spaceImage {
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spaceMediaFigure:hover .spaceImage {
+  transform: scale(1.03);
+}
+
+.spaceNarrative {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spaceHeaderMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.spaceNumeral {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--accent-gold);
+  letter-spacing: 0.05em;
+}
+
+.spaceLocationBadge {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #A89F91;
+  background: rgba(194, 142, 100, 0.1);
+  border: 1px solid rgba(194, 142, 100, 0.25);
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+}
+
+.spaceTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #FDFBF7;
+  margin: 0 0 0.5rem;
+}
+
+.spaceSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  margin: 0 0 1.25rem;
+}
+
+.spaceDescription {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #C0B7AB;
+  margin: 0;
+}
+
+/* Spaces 02 & 03 — Offset Diptych (Poolside Terrace + Rajwada Banquet) */
+.spacesDiptychGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.diptychCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.diptychCardOffset {
+  margin-top: clamp(2rem, 4vw, 4rem);
+}
+
+.diptychContent {
+  padding-top: 1.5rem;
+}
+
+/* Space 04 — Fort Façade (Reversed Asymmetric Grid) */
+.spaceRowReversed {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+/* Space 05 — Royal Villa Enclave (Full-Width Architectural Showcase) */
+.spaceBuyoutFeature {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.buyoutContent {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+/* ── 3. CHAPTER 03 — WEDDING ENGAGEMENT MODELS ── */
+.modelsChapter {
+  position: relative;
+  padding-top: clamp(5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(5rem, 8vw, 7.5rem);
+  border-bottom: 1px solid rgba(194, 142, 100, 0.18);
+  background-color: #12100E;
+}
+
+.modelsHeader {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto clamp(3.5rem, 6vw, 5rem);
+}
+
+.modelsSubtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #C0B7AB;
+  margin: 0;
+}
+
+.modelsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.modelCard {
+  position: relative;
+  background: linear-gradient(180deg, rgba(30, 26, 23, 0.85) 0%, rgba(20, 18, 16, 0.95) 100%);
+  border: 1px solid rgba(194, 142, 100, 0.22);
+  border-radius: 2px;
+  padding: clamp(2.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.modelCard:hover {
+  border-color: rgba(194, 142, 100, 0.45);
+  transform: translateY(-4px);
+}
+
+.modelBadge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  border: 1px solid rgba(194, 142, 100, 0.35);
+  background: rgba(194, 142, 100, 0.08);
+  padding: 0.35rem 0.8rem;
+  align-self: flex-start;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.modelTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #FDFBF7;
+  margin: 0 0 1.25rem;
+}
+
+.modelDescription {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #C0B7AB;
+  margin: 0 0 2rem;
+}
+
+.modelDivider {
+  height: 1px;
+  width: 100%;
+  background: rgba(194, 142, 100, 0.15);
+  margin-bottom: 1.75rem;
+}
+
+.modelDetailsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modelDetailItem {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #D6CEC5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.detailDot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ── 4. CHAPTER 04 — MULTI-DAY CELEBRATION STORY ── */
+.multiDayChapter {
+  position: relative;
+  padding-top: clamp(5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(5rem, 8vw, 7.5rem);
+  border-bottom: 1px solid rgba(194, 142, 100, 0.18);
+  background: radial-gradient(circle at center, #191614 0%, #12100E 100%);
+}
+
+.multiDayContainer {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.multiDayNarrative {
+  display: flex;
+  flex-direction: column;
+}
+
+.multiDayHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: rgba(22, 19, 17, 0.8);
+  border: 1px solid rgba(194, 142, 100, 0.2);
+  padding: clamp(2rem, 3vw, 2.75rem);
+  border-radius: 2px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.highlightNumeral {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--accent-gold);
+  min-width: 1.75rem;
+}
+
+.highlightText {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #D6CEC5;
+}
+
+/* ── 5. CHAPTER 05 — BESPOKE CONCIERGE CTA ── */
+.ctaChapter {
+  position: relative;
+  padding-top: clamp(5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(5rem, 8vw, 7.5rem);
+  text-align: center;
+}
+
+.ctaCard {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 3vw, 3rem);
+  background: linear-gradient(180deg, rgba(28, 24, 21, 0.9) 0%, rgba(18, 16, 14, 0.95) 100%);
+  border: 1px solid rgba(194, 142, 100, 0.25);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #FDFBF7;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.ctaSupportingText {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #C0B7AB;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.ctaButtonWrapper {
+  margin-bottom: 2.5rem;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #151311;
+  background-color: var(--accent-gold);
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 24px rgba(194, 142, 100, 0.2);
+}
+
+.ctaLink:hover {
+  background-color: #E2B088;
+  transform: translateY(-2px);
+}
+
+.ctaLink:focus-visible {
+  outline: 2px solid #FDFBF7;
+  outline-offset: 4px;
+}
+
+.ctaArrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.ctaLink:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+.conciergeCoordinates {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(194, 142, 100, 0.15);
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.contactCoordinate {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #D6CEC5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactCoordinate:hover {
+  color: var(--accent-gold);
+}
+
+.contactCoordinate:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+.coordinateLabel {
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+/* ── Tablet (769px – 1024px) ── */
+@media (max-width: 1024px) {
+  .spaceRowAsymmetric,
+  .spaceRowReversed {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .spaceRowReversed .spaceMediaFigure {
+    order: -1;
+  }
+
+  .buyoutContent {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .multiDayContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .heroImageFrame {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* ── Mobile (<= 768px) ── */
+@media (max-width: 768px) {
+  .invitationChapter,
+  .spacesChapter,
+  .modelsChapter,
+  .multiDayChapter,
+  .ctaChapter {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .spacesSequence {
+    gap: 3.5rem;
+  }
+
+  .spacesDiptychGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .diptychCardOffset {
+    margin-top: 0;
+  }
+
+  .modelsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .modelCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .heroImageFrame,
+  .spaceImageFrameStandard,
+  .spaceImageFramePortrait,
+  .spaceImageFramePanoramic {
+    aspect-ratio: 16 / 10;
+  }
+
+  .spaceRowAsymmetric,
+  .spaceRowReversed {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .heroFigcaption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .ctaCard {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .ctaButtonWrapper {
+    width: 100%;
+  }
+
+  /* Explicit 52px Mobile Touch Target CTA */
+  .ctaLink {
+    width: 100%;
+    justify-content: center;
+    height: 52px;
+    min-height: 52px;
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+  }
+
+  .conciergeCoordinates {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+/* ── Small Mobile (<= 480px) ── */
+@media (max-width: 480px) {
+  .sectionHeadline {
+    font-size: 2.4rem;
+  }
+
+  .chapterTitle {
+    font-size: 1.85rem;
+  }
+
+  .spaceTitle {
+    font-size: 1.45rem;
+  }
+
+  .modelTitle {
+    font-size: 1.5rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.85rem;
+  }
+}
+
+/* ── 9. Reduced Motion Support ── */
+@media (prefers-reduced-motion: reduce) {
+  .heroImage,
+  .spaceImage,
+  .modelCard,
+  .ctaLink,
+  .ctaArrow,
+  .contactCoordinate {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .spaceRowAsymmetric,
+  .spaceRowReversed,
+  .diptychCard,
+  .modelCard,
+  .multiDayHighlights,
+  .ctaCard {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

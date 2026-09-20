@@ -1,0 +1,155 @@
+.villasSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ── Pinned Viewport Container (Desktop) ── */
+.pinnedContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  position: absolute;
+  top: 5.25rem;
+  left: 5vw;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+
+.progressCounter {
+  position: absolute;
+  top: 5.25rem;
+  right: 5vw;
+  z-index: 10;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--accent-gold);
+}
+
+.counterCurrent {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-right: 0.25rem;
+}
+
+.mobileSectionTitle,
+.mobileSectionSubtitle {
+  display: none;
+}
+
+.track {
+  display: flex;
+  flex-direction: row;
+  width: 600vw;
+  height: 100vh;
+  will-change: transform;
+}
+
+/* ── Reduced Motion Flow on Desktop (> 768px) ── */
+@media (min-width: 769px) and (prefers-reduced-motion: reduce) {
+  .pinnedContainer {
+    height: auto;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .track {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    will-change: auto;
+  }
+
+  .progressCounter {
+    display: none;
+  }
+}
+
+/* ── Mobile Touch-Native Responsive Layout (<= 768px) ── */
+@media (max-width: 768px) {
+  .pinnedContainer {
+    height: auto;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .sectionHeader {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 3.75rem 1.5rem 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    border-bottom: 1px solid rgba(230, 197, 135, 0.12);
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    color: var(--accent-gold);
+  }
+
+  .mobileSectionTitle {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 6.5vw, 2.75rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+  }
+
+  .mobileSectionSubtitle {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 480px;
+  }
+
+  .progressCounter {
+    display: none;
+  }
+
+  .track {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    will-change: auto;
+  }
+}
+
+/* ── Tablet Portrait Refinements (641px - 768px) ── */
+@media (min-width: 641px) and (max-width: 768px) {
+  .sectionHeader {
+    padding: 5rem 3rem 2.5rem;
+  }
+}

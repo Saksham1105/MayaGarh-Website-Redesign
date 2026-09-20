@@ -1,0 +1,67 @@
+/* ==========================================
+   MAYA GARH DESIGN TOKENS
+   System-wide CSS Custom Properties
+   ========================================== */
+
+:root {
+  /* Color Palette */
+  --bg-dark: #1A1817;
+  --bg-dark-surface: #242120;
+  --bg-light: #FDFBF7;
+  --bg-light-surface: #F5F2EB;
+  --accent-gold: #E6C587;
+  --accent-gold-hover: #D4B070;
+  --accent-terracotta: #C28E64;
+  --text-dark: #1A1817;
+  --text-light: #FDFBF7;
+  --text-muted: #8C857B;
+  --text-gold: #E6C587;
+  --border-dark: rgba(230, 197, 135, 0.2);
+  --border-light: rgba(26, 24, 23, 0.1);
+
+  /* Typography Fallbacks (Loaded dynamically in layout via next/font) */
+  --font-serif-fallback: 'Cormorant Garamond', Georgia, serif;
+  --font-sans-fallback: 'Outfit', 'Inter', system-ui, sans-serif;
+
+  /* Layout Container Dimensions */
+  --max-width: 1440px;
+  --content-padding-desktop: 4rem;
+  --content-padding-tablet: 2rem;
+  --content-padding-mobile: 1.25rem;
+
+  /* Spacing Scale */
+  --space-3xs: 0.25rem;  /* 4px */
+  --space-2xs: 0.5rem;   /* 8px */
+  --space-xs: 0.75rem;   /* 12px */
+  --space-sm: 1rem;      /* 16px */
+  --space-md: 1.5rem;    /* 24px */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 3rem;      /* 48px */
+  --space-2xl: 4rem;     /* 64px */
+  --space-3xl: 6rem;     /* 96px */
+  --space-4xl: 8rem;     /* 128px */
+
+  /* Border Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Transitions & Motion Timing */
+  --transition-fast: 200ms ease;
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Z-Index Hierarchy */
+  --z-below: -1;
+  --z-base: 1;
+  --z-content: 10;
+  --z-sticky: 20;
+  --z-header: 50;
+  --z-dock: 60;
+  --z-modal-backdrop: 90;
+  --z-modal: 100;
+  --z-toast: 110;
+}

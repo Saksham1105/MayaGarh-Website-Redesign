@@ -1,0 +1,195 @@
+.prologueSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 8rem 0 9rem;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.prologueGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ── Editorial Narrative Column (Left) ── */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.editorialBlockquote {
+  position: relative;
+  margin: 0 0 2.25rem 0;
+  padding-left: 1.75rem;
+  border-left: 2px solid var(--accent-gold);
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--accent-gold-light, #f3e5c8);
+  margin: 0;
+}
+
+.bodyText {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(253, 251, 247, 0.82);
+  margin-bottom: 1.5rem;
+  max-width: 580px;
+}
+
+.bodyText:last-of-type {
+  margin-bottom: 0;
+}
+
+.dividerLine {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent-gold) 0%, transparent 100%);
+  margin-top: 2rem;
+}
+
+/* ── Architectural Imagery Column (Right) ── */
+.imageColumn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.primaryFigure {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.primaryImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 0 0 0);
+}
+
+.primaryImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.detailFigure {
+  position: absolute;
+  bottom: -2.5rem;
+  left: -2rem;
+  width: 55%;
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid rgba(230, 197, 135, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+.detailImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.detailImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Responsive Viewport Matrix ── */
+
+@media (max-width: 1024px) {
+  .prologueSection {
+    padding: 6rem 0 7rem;
+  }
+  .prologueGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .detailFigure {
+    bottom: -2rem;
+    left: -1.25rem;
+    width: 58%;
+  }
+}
+
+@media (max-width: 768px) {
+  .prologueSection {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .prologueGrid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .imageColumn {
+    gap: 1.5rem;
+  }
+  .detailFigure {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border: none;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  }
+  .heading {
+    margin-bottom: 1.5rem;
+  }
+  .editorialBlockquote {
+    margin-bottom: 1.75rem;
+    padding-left: 1.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .prologueSection {
+    padding: 3.5rem 0 4.5rem;
+  }
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+  }
+  .quoteText {
+    font-size: 1.15rem;
+  }
+}

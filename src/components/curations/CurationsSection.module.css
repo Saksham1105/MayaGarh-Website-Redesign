@@ -1,0 +1,501 @@
+/* ==========================================================================
+   MAYA GARH — CURATIONS / EXPERIENCES EDITORIAL ANTHOLOGY
+   Phase 5B: Asymmetric Luxury Travel Journal Styling
+   Canvas: Warm Sandstone / Linen (#FAF7F2 to #F5F1E8)
+   Typography: Cormorant Garamond (Serif) + Outfit / Inter (Sans)
+   ========================================================================== */
+
+.curationsSection {
+  position: relative;
+  width: 100%;
+  background-color: #FAF7F2;
+  color: #1A1817;
+  overflow: hidden;
+  z-index: 3;
+}
+
+/* ── 1. Transitional Threshold (Villas Charcoal → Curations Linen) ── */
+.transitionThreshold {
+  position: relative;
+  width: 100%;
+  background-color: #1C1917;
+  color: var(--text-light);
+  padding: clamp(5rem, 8vw, 7.5rem) var(--content-padding-desktop) clamp(4rem, 6vw, 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid rgba(194, 142, 100, 0.25);
+}
+
+.introContent {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introEyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+}
+
+.introHeadline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #FDFBF7;
+  margin: 0 0 1.25rem;
+}
+
+.introSubtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: #D4C9BC;
+  margin: 0 0 2.5rem;
+  max-width: 600px;
+}
+
+.introDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(230, 197, 135, 0.35);
+}
+
+.dividerEmblem {
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+}
+
+/* ── 2. Anthology Canvas Container ── */
+.anthologyCanvas {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(4rem, 7vw, 7rem) var(--content-padding-desktop) clamp(6rem, 10vw, 10rem);
+}
+
+/* ── 3. Base Chapter Article ── */
+.chapterArticle {
+  position: relative;
+  width: 100%;
+  margin-bottom: clamp(6rem, 10vw, 11rem);
+}
+
+.chapterArticle:last-child {
+  margin-bottom: 0;
+}
+
+.chapterGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2.5rem, 5vw, 6rem);
+}
+
+/* ── 4. Editorial Narrative Column ── */
+.narrativeColumn {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.chapterBadgeRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.chapterNumeral {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--accent-terracotta);
+}
+
+.badgeSeparator {
+  color: rgba(194, 142, 100, 0.5);
+  font-size: 0.75rem;
+}
+
+.categoryBadge {
+  color: var(--accent-terracotta);
+}
+
+.locationBadge {
+  color: #7A726B;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+}
+
+.chapterTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #1A1817;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.85rem;
+}
+
+.chapterSubtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  font-weight: 300;
+  font-style: italic;
+  color: #8C5832;
+  line-height: 1.35;
+  margin: 0 0 1.5rem;
+}
+
+.chapterDescription {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #423C37;
+  margin: 0 0 2rem;
+  max-width: 540px;
+}
+
+/* ── Highlights / Curated Moments ── */
+.highlightsBlock {
+  margin: 0 0 2.5rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid rgba(194, 142, 100, 0.3);
+}
+
+.highlightsHeading {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #8C5832;
+  margin-bottom: 0.85rem;
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #524B45;
+  line-height: 1.5;
+}
+
+.highlightGlyph {
+  color: var(--accent-terracotta);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+.highlightText {
+  flex: 1;
+}
+
+/* ── CTA Action ── */
+.ctaWrapper {
+  margin-top: 0.5rem;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 52px;
+  min-height: 52px;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid rgba(26, 24, 23, 0.2);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #1A1817;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaLink:hover {
+  background-color: #1A1817;
+  color: #FDFBF7;
+  border-color: #1A1817;
+}
+
+.ctaLink:focus-visible {
+  outline: 2px solid var(--accent-terracotta);
+  outline-offset: 4px;
+}
+
+.ctaArrow {
+  transition: transform 300ms ease;
+  font-size: 0.95rem;
+}
+
+.ctaLink:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* ── 5. Editorial Media Figure ── */
+.mediaFigure {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.imageFrame {
+  position: relative;
+  overflow: hidden;
+  background-color: #ECE7DE;
+  box-shadow: 0 16px 40px -12px rgba(26, 24, 23, 0.12);
+}
+
+.curationImage {
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chapterArticle:hover .curationImage {
+  transform: scale(1.02);
+}
+
+.figcaption {
+  margin-top: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #857D74;
+}
+
+/* ── 6. Compositional Variants (Asymmetric Editorial Rhythms) ── */
+
+/* Chapter 01: Pushkar Desert Dune Sundowners (Square, Right-Weighted) */
+.sundownerRight .chapterGrid {
+  flex-direction: row;
+}
+
+.sundownerRight .narrativeColumn {
+  flex: 0 0 45%;
+  max-width: 520px;
+}
+
+.sundownerRight .mediaFigure {
+  flex: 0 0 52%;
+}
+
+.sundownerRight .imageFrame {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+/* Chapter 02: Royal Veranda & Courtyard Dining (Landscape, Left-Weighted) */
+.diningLeft .chapterGrid {
+  flex-direction: row-reverse;
+}
+
+.diningLeft .narrativeColumn {
+  flex: 0 0 42%;
+  max-width: 500px;
+}
+
+.diningLeft .mediaFigure {
+  flex: 0 0 55%;
+}
+
+.diningLeft .imageFrame {
+  aspect-ratio: 1030 / 687;
+  width: 100%;
+}
+
+/* Chapter 03: The Royal Infinity Pool & Sun Terrace (Panoramic, Horizon-Emphasized) */
+.poolPanoramic .chapterGrid {
+  flex-direction: row;
+}
+
+.poolPanoramic .narrativeColumn {
+  flex: 0 0 38%;
+  max-width: 480px;
+}
+
+.poolPanoramic .mediaFigure {
+  flex: 0 0 60%;
+}
+
+.poolPanoramic .imageFrame {
+  aspect-ratio: 1030 / 687;
+  width: 100%;
+}
+
+/* Chapter 04: Courtyard Oasis & Heritage Grounds (Square, Staggered Right) */
+.courtyardStaggered .chapterGrid {
+  flex-direction: row-reverse;
+}
+
+.courtyardStaggered .narrativeColumn {
+  flex: 0 0 46%;
+  max-width: 540px;
+}
+
+.courtyardStaggered .mediaFigure {
+  flex: 0 0 48%;
+}
+
+.courtyardStaggered .imageFrame {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+/* ── 7. Responsive Styles (Tablet: 769px – 1024px) ── */
+@media (max-width: 1024px) {
+  .anthologyCanvas {
+    padding: 4rem var(--content-padding-tablet) 6rem;
+  }
+
+  .chapterArticle {
+    margin-bottom: 6rem;
+  }
+
+  .chapterGrid {
+    gap: 3rem;
+  }
+
+  .sundownerRight .narrativeColumn,
+  .diningLeft .narrativeColumn,
+  .poolPanoramic .narrativeColumn,
+  .courtyardStaggered .narrativeColumn {
+    flex: 0 0 48%;
+  }
+
+  .sundownerRight .mediaFigure,
+  .diningLeft .mediaFigure,
+  .poolPanoramic .mediaFigure,
+  .courtyardStaggered .mediaFigure {
+    flex: 0 0 48%;
+  }
+}
+
+/* ── 8. Responsive Styles (Mobile & Portrait Tablet: <= 768px) ── */
+@media (max-width: 768px) {
+  .transitionThreshold {
+    padding: 4.5rem var(--content-padding-mobile) 3.5rem;
+  }
+
+  .anthologyCanvas {
+    padding: 3rem var(--content-padding-mobile) 5rem;
+  }
+
+  .chapterArticle {
+    margin-bottom: 5rem;
+  }
+
+  /* Single-column vertical journal flow on mobile: photo first, narrative below */
+  .sundownerRight .chapterGrid,
+  .diningLeft .chapterGrid,
+  .poolPanoramic .chapterGrid,
+  .courtyardStaggered .chapterGrid {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .sundownerRight .narrativeColumn,
+  .diningLeft .narrativeColumn,
+  .poolPanoramic .narrativeColumn,
+  .courtyardStaggered .narrativeColumn {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .sundownerRight .mediaFigure,
+  .diningLeft .mediaFigure,
+  .poolPanoramic .mediaFigure,
+  .courtyardStaggered .mediaFigure {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .sundownerRight .imageFrame,
+  .courtyardStaggered .imageFrame {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+  }
+
+  .diningLeft .imageFrame,
+  .poolPanoramic .imageFrame {
+    aspect-ratio: 1030 / 687;
+    width: 100%;
+  }
+
+  .ctaLink {
+    width: 100%;
+    justify-content: center;
+    height: 52px;
+    min-height: 52px;
+    box-sizing: border-box;
+  }
+}
+
+/* ── 9. Reduced Motion Support ── */
+@media (prefers-reduced-motion: reduce) {
+  .curationImage {
+    transition: none !important;
+  }
+
+  .ctaLink,
+  .ctaArrow {
+    transition: none !important;
+  }
+
+  .narrativeColumn,
+  .mediaFigure,
+  .imageFrame {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}

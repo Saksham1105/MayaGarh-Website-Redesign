@@ -1,0 +1,53 @@
+.mediaContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: var(--z-below);
+}
+
+.heroImageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform, scale;
+  transform-origin: center center;
+}
+
+.heroImageDesktop {
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+
+.vignetteOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.15) 0%, rgba(26, 24, 23, 0.75) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bottomGradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: linear-gradient(to top, rgba(26, 24, 23, 0.95) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .heroImageDesktop {
+    object-position: center center;
+  }
+}

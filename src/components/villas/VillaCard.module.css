@@ -1,0 +1,348 @@
+.chapterArticle {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7.5rem 5vw 4rem;
+  box-sizing: border-box;
+}
+
+.chapterGrid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 4.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  height: 100%;
+}
+
+/* ── Narrative & Info Column (Left) ── */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.chapterBadge {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin-bottom: 1.75rem;
+}
+
+.editorialQuote {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(253, 251, 247, 0.85);
+  margin-bottom: 2.25rem;
+  max-width: 520px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.rateBadge {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(194, 142, 100, 0.4);
+  border-radius: 2px;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid var(--accent-gold);
+  border-radius: 2px;
+  background: rgba(230, 197, 135, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ctaLink:hover,
+.ctaLink:focus-visible {
+  background: var(--accent-gold);
+  color: var(--bg-dark);
+  border-color: var(--accent-gold);
+}
+
+.ctaArrow {
+  transition: transform 0.3s ease;
+}
+
+.ctaLink:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* ── Photography Frame Column (Right) ── */
+.imageColumn {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  max-height: 620px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Narrow Desktop & Tablet Landscape Refinements (769px - 960px) ── */
+@media (min-width: 769px) and (max-width: 960px) {
+  .chapterArticle {
+    padding: 7rem 4vw 3.5rem;
+  }
+
+  .chapterGrid {
+    gap: 2.25rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .title {
+    font-size: clamp(2.2rem, 4.2vw, 3rem);
+    margin-bottom: 1.15rem;
+  }
+
+  .editorialQuote {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .imageColumn {
+    height: 52vh;
+    max-height: 480px;
+  }
+}
+
+/* ── Reduced Motion Flow on Desktop (> 768px) ── */
+@media (min-width: 769px) and (prefers-reduced-motion: reduce) {
+  .chapterArticle {
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    padding: 6rem 5vw 5rem;
+    border-bottom: 1px solid rgba(230, 197, 135, 0.15);
+  }
+
+  .chapterArticle:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ── Mobile Touch-Native Editorial Chapters (<= 768px) ── */
+@media (max-width: 768px) {
+  .chapterArticle {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 3.25rem 1.5rem 4.25rem;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* Refined, understated editorial chapter hairline divider */
+  .chapterArticle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(230, 197, 135, 0.25) 20%,
+      rgba(230, 197, 135, 0.45) 50%,
+      rgba(230, 197, 135, 0.25) 80%,
+      transparent 100%
+    );
+  }
+
+  .chapterArticle:last-child::after {
+    display: none;
+  }
+
+  .chapterGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.85rem;
+    height: auto;
+    width: 100%;
+  }
+
+  /* Photography sits first with pristine editorial clarity */
+  .imageColumn {
+    order: 1;
+    width: 100%;
+    height: clamp(260px, 58vw, 420px);
+    max-height: 440px;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    position: relative;
+  }
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .image {
+    object-fit: cover;
+    object-position: center 32%;
+  }
+
+  /* Narrative & Info Column flows naturally below photography */
+  .infoColumn {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chapterBadge {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--accent-sand);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .title {
+    font-size: clamp(2.35rem, 8vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--text-light);
+    margin-bottom: 1.15rem;
+  }
+
+  .editorialQuote {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: rgba(253, 251, 247, 0.88);
+    margin-bottom: 1.75rem;
+    max-width: 100%;
+  }
+
+  .metaRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Refined luxury status descriptor rather than a competing button */
+  .rateBadge {
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .rateBadge::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--accent-gold);
+  }
+
+  /* High-touch ergonomic mobile action link */
+  .ctaLink {
+    width: 100%;
+    min-height: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.75rem;
+    box-sizing: border-box;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    border: 1px solid var(--accent-gold);
+    background: rgba(230, 197, 135, 0.05);
+    color: var(--text-light);
+  }
+
+  .ctaLink:active {
+    background: rgba(230, 197, 135, 0.2);
+    color: var(--accent-gold);
+  }
+}
+
+/* ── Tablet Portrait Refinements (641px - 768px) ── */
+@media (min-width: 641px) and (max-width: 768px) {
+  .chapterArticle {
+    padding: 4.5rem 3rem 5.5rem;
+  }
+
+  .chapterArticle::after {
+    left: 3rem;
+    right: 3rem;
+  }
+
+  .imageColumn {
+    height: clamp(360px, 46vh, 520px);
+    max-height: 540px;
+  }
+
+  .ctaLink {
+    max-width: 380px;
+  }
+}
