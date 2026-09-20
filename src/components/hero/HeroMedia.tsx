@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styles from './HeroMedia.module.css';
 import { ASSET_MAP } from '@/data/assets.data';
@@ -10,18 +10,7 @@ interface HeroMediaProps {
 }
 
 export const HeroMedia: React.FC<HeroMediaProps> = ({ imageRef }) => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 640);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile, { passive: true });
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const imageAsset = isMobile ? ASSET_MAP.HERO_MOBILE : ASSET_MAP.HERO_DESKTOP;
+  const imageAsset = ASSET_MAP.HERO_DESKTOP;
 
   return (
     <div className={styles.mediaContainer}>

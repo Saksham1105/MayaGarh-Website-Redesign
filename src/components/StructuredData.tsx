@@ -10,19 +10,22 @@ export const StructuredData: React.FC = () => {
   const webSiteSchema = getWebSiteSchema();
   const breadcrumbSchema = getBreadcrumbSchema();
 
+  const sanitizeJsonLd = (schema: object): string =>
+    JSON.stringify(schema).replace(/</g, '\\u003c');
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelSchema) }}
+        dangerouslySetInnerHTML={{ __html: sanitizeJsonLd(hotelSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+        dangerouslySetInnerHTML={{ __html: sanitizeJsonLd(webSiteSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: sanitizeJsonLd(breadcrumbSchema) }}
       />
     </>
   );

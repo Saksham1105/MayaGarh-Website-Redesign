@@ -36,7 +36,6 @@ export const WeddingHero: React.FC<WeddingHeroProps> = ({
               src={heroAsset.path}
               alt={heroAsset.altText}
               fill
-              priority
               sizes="(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px"
               className={styles.heroImage}
             />

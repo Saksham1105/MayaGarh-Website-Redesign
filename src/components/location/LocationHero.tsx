@@ -29,7 +29,6 @@ export const LocationHero: React.FC<LocationHeroProps> = ({ intro }) => {
               src={intro.heroAsset.path}
               alt={intro.heroAsset.altText}
               fill
-              priority
               sizes="(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1320px"
               className={styles.heroImage}
             />

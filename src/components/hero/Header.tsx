@@ -141,8 +141,12 @@ export const Header: React.FC = () => {
       </header>
 
       {/* Mobile Drawer */}
-      <div className={`${styles.mobileDrawer} ${isMobileOpen ? styles.mobileDrawerOpen : ''}`} aria-hidden={!isMobileOpen}>
-        <ul className={styles.mobileNavList}>
+      <div
+        className={`${styles.mobileDrawer} ${isMobileOpen ? styles.mobileDrawerOpen : ''}`}
+        aria-hidden={!isMobileOpen}
+      >
+        <nav aria-label="Mobile Sanctuary Navigation">
+          <ul className={styles.mobileNavList}>
           <li>
             <a href="#prologue" className={styles.mobileNavLink} onClick={closeMobileMenu}>
               Sanctuary
@@ -188,6 +192,7 @@ export const Header: React.FC = () => {
             </a>
           </li>
         </ul>
+        </nav>
       </div>
     </>
   );
