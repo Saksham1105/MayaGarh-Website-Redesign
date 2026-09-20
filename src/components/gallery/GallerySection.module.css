@@ -1,0 +1,691 @@
+/* ==========================================================================
+   MAYA GARH PUSHKAR — GALLERY SECTION STYLES (PHASE 8B)
+   Hybrid Editorial Monograph aesthetic (Aman / Belmond quiet luxury)
+   ========================================================================== */
+
+.gallerySection {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-charcoal-deep, #0c0a09);
+  color: var(--color-cream-light, #f5f0eb);
+  padding: clamp(5rem, 8vw, 8rem) 0 clamp(6rem, 10vw, 9rem);
+  border-top: 1px solid rgba(197, 160, 89, 0.15);
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   01. INTRO / HEADER
+   -------------------------------------------------------------------------- */
+.introContainer {
+  max-width: 1200px;
+  margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.introEyebrow {
+  display: inline-block;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold-antique, #c5a059);
+  margin-bottom: 1.25rem;
+}
+
+.introHeadline {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--color-sandstone-light, #ece6db);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.introSubheadline {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', Georgia, serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 300;
+  color: var(--color-gold-muted, #a68c58);
+  margin: 0 0 1.5rem;
+}
+
+.introDescription {
+  max-width: 740px;
+  margin: 0 auto 2rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.75;
+  color: var(--color-sandstone-muted, #c8bfb0);
+  font-weight: 300;
+}
+
+.introBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-antique, #c5a059);
+  padding: 0.4rem 1.15rem;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 2px;
+  background: rgba(197, 160, 89, 0.04);
+}
+
+/* --------------------------------------------------------------------------
+   02. CATEGORY NAVIGATION FILTERS
+   -------------------------------------------------------------------------- */
+.filtersWrapper {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto clamp(2.5rem, 4vw, 4rem);
+  padding: 0 1.5rem;
+}
+
+.filtersContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.filterNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem clamp(0.75rem, 1.8vw, 2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filterItem {
+  display: inline-flex;
+}
+
+.filterButton {
+  background: transparent;
+  border: none;
+  padding: 0.65rem 0.35rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(236, 230, 219, 0.55);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  outline: none;
+}
+
+.filterButton:hover {
+  color: var(--color-sandstone-light, #ece6db);
+}
+
+.filterButtonActive {
+  color: var(--color-gold-antique, #c5a059) !important;
+  font-weight: 500;
+}
+
+.filterButtonActive::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-gold-antique, #c5a059);
+  transition: transform 0.3s ease;
+}
+
+.filterButton:focus-visible {
+  outline: 2px solid var(--color-gold-antique, #c5a059);
+  outline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   03. EDITORIAL GALLERY CONTENT & CHAPTERS
+   -------------------------------------------------------------------------- */
+.galleryContent {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.chapterSection {
+  margin-bottom: clamp(4.5rem, 7vw, 7.5rem);
+}
+
+.chapterSection:last-child {
+  margin-bottom: 0;
+}
+
+.chapterHeader {
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.chapterEyebrowRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+}
+
+.chapterNumeral {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--color-gold-antique, #c5a059);
+}
+
+.chapterTitle {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 300;
+  color: var(--color-sandstone-light, #ece6db);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.chapterDescription {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.875rem;
+  color: var(--color-sandstone-muted, #a3998b);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* --------------------------------------------------------------------------
+   04. RHYTHMIC ASYMMETRIC GRID PATTERNS
+   -------------------------------------------------------------------------- */
+
+/* Standard 2-Column Balanced / Asymmetric Pairs */
+.gridPair {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+/* Full Width Featured Hero Plate */
+.gridFullHero {
+  margin-bottom: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+/* 3-Plate Dynamic Composition (1 Leading Large + 2 Paired Details) */
+.gridTrio {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.trioStack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+/* 4-Plate Quad (Used for Craftsmanship & Villa Details) */
+.gridQuad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+}
+
+/* 3-Column Equal Group */
+.gridTrioEqual {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.2vw, 2rem);
+}
+
+/* --------------------------------------------------------------------------
+   05. ARCHIVAL PLATE COMPONENT
+   -------------------------------------------------------------------------- */
+.plateFigure {
+  margin: 0;
+  position: relative;
+  background-color: #14110e;
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.4s ease;
+}
+
+.plateFigure:hover {
+  border-color: rgba(197, 160, 89, 0.35);
+}
+
+.plateTrigger {
+  width: 100%;
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.plateTrigger:focus-visible {
+  outline: 2px solid var(--color-gold-antique, #c5a059);
+  outline-offset: -2px;
+  z-index: 10;
+}
+
+.plateImageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #080706;
+}
+
+/* Explicit Aspect Ratios to guarantee Zero CLS */
+.ratio16x9 {
+  aspect-ratio: 16 / 9;
+}
+
+.ratio2x1 {
+  aspect-ratio: 2 / 1;
+}
+
+.ratio3x2 {
+  aspect-ratio: 3 / 2;
+}
+
+.ratio4x3 {
+  aspect-ratio: 4 / 3;
+}
+
+.ratio1x1 {
+  aspect-ratio: 1 / 1;
+}
+
+.plateImage {
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 100%;
+  height: 100%;
+}
+
+.plateFigure:hover .plateImage {
+  transform: scale(1.025);
+}
+
+.plateCaption {
+  padding: 0.85rem 1rem;
+  background: #110e0b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.08);
+}
+
+.plateTitle {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', Georgia, serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-sandstone-light, #ece6db);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plateCategoryBadge {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-muted, #a68c58);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   06. ACCESSIBLE LIGHTBOX / MODAL
+   -------------------------------------------------------------------------- */
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(6, 5, 4, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.lightboxDialog {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+}
+
+.lightboxHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.lightboxCounter {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-antique, #c5a059);
+}
+
+.lightboxCloseButton {
+  background: rgba(20, 17, 14, 0.8);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  color: #ece6db;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.lightboxCloseButton:hover {
+  background: rgba(197, 160, 89, 0.2);
+  border-color: var(--color-gold-antique, #c5a059);
+  color: #ffffff;
+}
+
+.lightboxCloseButton:focus-visible {
+  outline: 2px solid var(--color-gold-antique, #c5a059);
+  outline-offset: 4px;
+}
+
+.lightboxBody {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  overflow: hidden;
+}
+
+.lightboxImageStage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxImage {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.lightboxNavButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(18, 15, 12, 0.75);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  color: #ece6db;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  outline: none;
+}
+
+.lightboxNavButton:hover {
+  background: rgba(197, 160, 89, 0.25);
+  border-color: var(--color-gold-antique, #c5a059);
+  color: #ffffff;
+}
+
+.lightboxNavButton:focus-visible {
+  outline: 2px solid var(--color-gold-antique, #c5a059);
+  outline-offset: 4px;
+}
+
+.lightboxPrev {
+  left: 0.5rem;
+}
+
+.lightboxNext {
+  right: 0.5rem;
+}
+
+.lightboxFooter {
+  width: 100%;
+  text-align: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lightboxCaptionTitle {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--color-sandstone-light, #ece6db);
+  margin: 0;
+}
+
+.lightboxCaptionCategory {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-muted, #a68c58);
+}
+
+/* --------------------------------------------------------------------------
+   07. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+
+/* Tablet (769px - 1024px) */
+@media (max-width: 1024px) {
+  .gridTrio {
+    grid-template-columns: 1fr;
+  }
+
+  .gridQuad {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gridTrioEqual {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lightboxNavButton {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .gallerySection {
+    padding: 4.5rem 0 6rem;
+  }
+
+  .introContainer {
+    padding: 0 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .introDescription {
+    margin-bottom: 1.5rem;
+  }
+
+  .filtersWrapper {
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .filtersContainer {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 0.5rem;
+  }
+
+  .filtersContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filterNav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    padding: 0 0.5rem;
+  }
+
+  .filterButton {
+    min-height: 48px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .galleryContent {
+    padding: 0 1rem;
+  }
+
+  .gridPair {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .gridTrio {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .trioStack {
+    gap: 1.5rem;
+  }
+
+  .gridQuad {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .gridTrioEqual {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .plateCaption {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .plateTitle {
+    font-size: 0.875rem;
+  }
+
+  .lightboxBackdrop {
+    padding: 0.75rem;
+  }
+
+  .lightboxNavButton {
+    width: 44px;
+    height: 44px;
+    background: rgba(18, 15, 12, 0.85);
+  }
+
+  .lightboxPrev {
+    left: 0.25rem;
+  }
+
+  .lightboxNext {
+    right: 0.25rem;
+  }
+}
+
+/* Small Mobile (<= 390px) */
+@media (max-width: 390px) {
+  .introHeadline {
+    font-size: 2rem;
+  }
+
+  .filterNav {
+    gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   08. REDUCED MOTION PREFERENCES
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .plateImage,
+  .plateFigure,
+  .filterButton,
+  .lightboxBackdrop,
+  .lightboxCloseButton,
+  .lightboxNavButton {
+    transition: none !important;
+  }
+
+  .plateFigure:hover .plateImage {
+    transform: none !important;
+  }
+}

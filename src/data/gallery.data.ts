@@ -369,7 +369,7 @@ const RAW_GALLERY_ITEMS: GalleryImageItem[] = [
 
 export const GALLERY_DATA: GallerySectionData = {
   intro: {
-    eyebrow: 'VISUAL MONOGRAPH',
+    eyebrow: 'THE VISUAL ARCHIVE',
     headline: 'A Living Chronicle of Stone and Light',
     subheadline: 'The Photographic Archive of Maya Garh Pushkar',
     description:
