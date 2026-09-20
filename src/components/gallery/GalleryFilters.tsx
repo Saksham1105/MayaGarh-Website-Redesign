@@ -24,12 +24,48 @@ export const GalleryFilters: React.FC<GalleryFiltersProps> = ({
   activeFilter,
   onSelectFilter,
 }) => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const isFirstRender = React.useRef(true);
+
+  React.useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    const container = containerRef.current;
+    if (!container) return;
+
+    const activeBtn = container.querySelector<HTMLElement>(
+      `#gallery-filter-${activeFilter}`
+    );
+    if (!activeBtn) return;
+
+    // Only auto-scroll if container has horizontal overflow
+    if (container.scrollWidth <= container.clientWidth) return;
+
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Calculate center offset relative to the scroll container
+    const containerWidth = container.clientWidth;
+    const btnLeft = activeBtn.offsetLeft;
+    const btnWidth = activeBtn.offsetWidth;
+    const targetScrollLeft = btnLeft - containerWidth / 2 + btnWidth / 2;
+
+    container.scrollTo({
+      left: Math.max(0, targetScrollLeft),
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    });
+  }, [activeFilter]);
+
   return (
     <nav
       className={styles.filtersWrapper}
       aria-label="Gallery category filters"
     >
-      <div className={styles.filtersContainer}>
+      <div ref={containerRef} className={styles.filtersContainer}>
         <ul className={styles.filterNav}>
           <li className={styles.filterItem}>
             <button

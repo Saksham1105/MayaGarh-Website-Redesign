@@ -577,34 +577,78 @@
   }
 
   .filtersWrapper {
-    padding: 0 1rem;
-    margin-bottom: 2.5rem;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
   }
 
   .filtersContainer {
+    display: flex;
     justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-bottom: 0.5rem;
+    mask-image: linear-gradient(
+      to right,
+      #000 0%,
+      #000 calc(100% - 28px),
+      rgba(0, 0, 0, 0.2) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 0%,
+      #000 calc(100% - 28px),
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 
   .filtersContainer::-webkit-scrollbar {
     display: none;
+    width: 0;
+    height: 0;
   }
 
   .filterNav {
+    display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    gap: 1.25rem;
-    padding: 0 0.5rem;
+    align-items: center;
+    width: max-content;
+    gap: clamp(1.25rem, 3.8vw, 1.625rem);
+    padding: 0.25rem 1.375rem 0.6rem;
+    margin: 0;
+  }
+
+  .filterItem {
+    display: inline-flex;
+    flex-shrink: 0;
   }
 
   .filterButton {
-    min-height: 48px;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    min-height: 46px;
+    font-size: clamp(0.6875rem, 2.2vw, 0.735rem);
+    font-weight: 500;
+    letter-spacing: 0.17em;
+    padding: 0.65rem 0.2rem;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .filterButtonActive::after {
+    bottom: 6px;
+    height: 1px;
   }
 
   .galleryContent {
@@ -666,10 +710,6 @@
 @media (max-width: 390px) {
   .introHeadline {
     font-size: 2rem;
-  }
-
-  .filterNav {
-    gap: 1rem;
   }
 }
 
