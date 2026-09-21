@@ -32,6 +32,11 @@ export const getHotelSchema = () => ({
     name: SEO_CONFIG.siteName,
     url: 'https://mayaluxury.in',
   },
+  brand: {
+    '@type': 'Brand',
+    name: SEO_CONFIG.siteName,
+    url: 'https://mayaluxury.in',
+  },
 });
 
 export const getWebSiteSchema = () => ({

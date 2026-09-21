@@ -10,13 +10,13 @@ test.describe('Maya Garh Phase 11D — Technical Hardening, SEO & Accessibility 
     await page.goto('/', { waitUntil: 'networkidle' });
 
     // Single title tag with brand and location
-    await expect(page).toHaveTitle('Maya Garh Pushkar | Luxury Royal Sanctuary in Rajasthan');
+    await expect(page).toHaveTitle('Maya Garh Pushkar | Luxury Heritage Villa Retreat in Rajasthan');
 
     // Meta description
     const metaDesc = page.locator('meta[name="description"]');
     await expect(metaDesc).toHaveAttribute(
       'content',
-      'Experience Maya Garh Pushkar, a peaceful royal sanctuary offering luxury villas, secluded courtyards, plunge pools, and authentic Rajasthani hospitality amidst the Aravalli hills.'
+      'Discover Maya Garh Pushkar, a private luxury heritage retreat near Pushkar, Rajasthan, featuring six signature villas, courtyards, and bespoke experiences.'
     );
 
     // Exact Canonical URL strategy
@@ -26,7 +26,7 @@ test.describe('Maya Garh Phase 11D — Technical Hardening, SEO & Accessibility 
     // OpenGraph Tags
     await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
       'content',
-      'Maya Garh Pushkar | Luxury Royal Sanctuary in Rajasthan'
+      'Maya Garh Pushkar | Luxury Heritage Villa Retreat in Rajasthan'
     );
     await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
       'content',

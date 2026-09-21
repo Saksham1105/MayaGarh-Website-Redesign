@@ -22,7 +22,7 @@ export const PROLOGUE_DATA: PrologueData = {
   paragraph1:
     'Offering a peaceful paradise fit for royalty, where serene courtyards and gentle aura provide immeasurable comfort.',
   paragraph2:
-    'Set against the serene desert landscape of Pushkar and framed by the ancient Aravalli mountains, Maya Garh brings together classical Rajasthani architecture, shaded marble colonnades, and quiet courtly sanctuary spaces.',
+    'Set against the serene desert landscape of Pushkar and framed by the ancient Aravalli mountains, Maya Garh brings together classical Rajasthani architecture, shaded marble colonnades, six signature villas, and quiet courtly sanctuary spaces within the Maya Luxury retreat collection.',
   primaryImageCaption:
     'Shaded marble courtyard colonnade and central reflection basin at Maya Garh',
   detailImageCaption:

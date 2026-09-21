@@ -53,17 +53,17 @@ export interface SEOConfig {
 }
 
 export const SEO_CONFIG: SEOConfig = {
-  title: 'Maya Garh Pushkar | Luxury Royal Sanctuary in Rajasthan',
+  title: 'Maya Garh Pushkar | Luxury Heritage Villa Retreat in Rajasthan',
   description:
-    'Experience Maya Garh Pushkar, a peaceful royal sanctuary offering luxury villas, secluded courtyards, plunge pools, and authentic Rajasthani hospitality amidst the Aravalli hills.',
+    'Discover Maya Garh Pushkar, a private luxury heritage retreat near Pushkar, Rajasthan, featuring six signature villas, courtyards, and bespoke experiences.',
   canonical: 'https://mayaluxury.in/maya-garh/',
   siteName: 'Maya Luxury',
   locale: 'en_IN',
   type: 'website',
   openGraph: {
-    title: 'Maya Garh Pushkar | Luxury Royal Sanctuary in Rajasthan',
+    title: 'Maya Garh Pushkar | Luxury Heritage Villa Retreat in Rajasthan',
     description:
-      'Experience Maya Garh Pushkar, a peaceful royal sanctuary offering luxury villas, secluded courtyards, plunge pools, and authentic Rajasthani hospitality.',
+      'Discover Maya Garh Pushkar, a private luxury heritage retreat near Pushkar, Rajasthan, featuring six signature villas, courtyards, and bespoke experiences.',
     url: 'https://mayaluxury.in/maya-garh/',
     siteName: 'Maya Luxury',
     locale: 'en_IN',
@@ -79,9 +79,9 @@ export const SEO_CONFIG: SEOConfig = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maya Garh Pushkar | Luxury Royal Sanctuary in Rajasthan',
+    title: 'Maya Garh Pushkar | Luxury Heritage Villa Retreat in Rajasthan',
     description:
-      'Experience Maya Garh Pushkar, a peaceful royal sanctuary offering luxury villas, secluded courtyards, plunge pools, and authentic Rajasthani hospitality.',
+      'Discover Maya Garh Pushkar, a private luxury heritage retreat near Pushkar, Rajasthan, featuring six signature villas, courtyards, and bespoke experiences.',
     images: ['https://mayaluxury.in/maya-garh/images/MAYA-GARH-PUSHKAR57.webp'],
   },
   robots: {
