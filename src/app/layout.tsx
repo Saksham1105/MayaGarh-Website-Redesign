@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SEO_CONFIG.canonical,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
   openGraph: {
     title: SEO_CONFIG.openGraph.title,
     description: SEO_CONFIG.openGraph.description,
