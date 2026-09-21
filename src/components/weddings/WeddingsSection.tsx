@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useRef } from 'react';
-import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAPContext } from '@/animation/useGSAPContext';
@@ -209,7 +208,7 @@ export const WeddingsSection: React.FC = () => {
             </p>
 
             <div className={styles.ctaButtonWrapper}>
-              <Link
+              <a
                 href={WEDDINGS_DATA.cta.target}
                 className={styles.ctaLink}
                 aria-label="Enquire for destination weddings at Maya Garh Pushkar"
@@ -218,7 +217,7 @@ export const WeddingsSection: React.FC = () => {
                 <span className={styles.ctaArrow} aria-hidden="true">
                   →
                 </span>
-              </Link>
+              </a>
             </div>
 
             <div className={styles.conciergeCoordinates}>

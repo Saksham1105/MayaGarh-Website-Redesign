@@ -85,7 +85,11 @@ export const ReservationSection: React.FC = () => {
   useEffect(() => {
     parseContextualIntent();
     window.addEventListener('hashchange', parseContextualIntent);
-    return () => window.removeEventListener('hashchange', parseContextualIntent);
+    window.addEventListener('popstate', parseContextualIntent);
+    return () => {
+      window.removeEventListener('hashchange', parseContextualIntent);
+      window.removeEventListener('popstate', parseContextualIntent);
+    };
   }, [parseContextualIntent]);
 
   const handleFieldChange = <K extends keyof FormPayload>(
